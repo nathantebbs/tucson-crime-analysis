@@ -5,4 +5,5 @@ CSc 380: Principles of Data Science
 
 ---
 
-> [!NOTE] This project is under completion. Please refer to the notebook file and latex file for more information.
+> [!NOTE]
+> This project is under completion. Please refer to the notebook file and latex file for more information.
