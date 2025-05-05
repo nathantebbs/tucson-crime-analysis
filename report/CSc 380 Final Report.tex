@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage{color}   %May be necessary if you want to color links
 \usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\graphicspath{ {./graphs/} }
 \hypersetup{
 	linkcolor=blue,
 	citecolor=blue,
@@ -75,11 +78,23 @@
 	
 	\section{Software and Tools}
 	
-	lorem ipsum
+	lorem ipsum \ref{fig:crime-type-by-ward}
 	
-	\chapter{Results}
-	
-	lorem ipsum
+	\chapter{Exploratory Data Analysis}
+
+        \begin{figure}[!t]
+          \begin{subfigure}{1.0\textwidth}
+            \includegraphics[width=1.25\linewidth, height=8cm, scale=1.5]{crime-types-by-time}
+            \caption{Prevalence of Crime Types Across Different Time Periods}
+            \label{fig:crime-type-by-time}
+          \end{subfigure}
+          \begin{subfigure}{1.0\textwidth}
+            \includegraphics[width=1.25\linewidth, height=8cm]{crime-types-by-ward}
+            \caption{Dominant Crime Types by Ward}
+            \label{fig:crime-type-by-ward}
+          \end{subfigure}
+          \caption{Comparing Crime Statistics by Time and Ward}
+        \end{figure}
 	
 	
 \end{document}
