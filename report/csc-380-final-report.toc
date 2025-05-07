@@ -2,9 +2,15 @@
 \contentsline {section}{\numberline {1.1}Objectives}{3}{section.1.1}%
 \contentsline {section}{\numberline {1.2}Overview of Data}{3}{section.1.2}%
 \contentsline {section}{\numberline {1.3}Related Works}{4}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}“The Effects of Neighborhood Characteristics on Police Officers’ Decisions to Initiate Encounters” by Robin S. Engel, Michael R. Smith, and Robert E. Worden (2007)}{4}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}“Predictive Policing: The Argument for Public Transparency” by Sarah Brayne (2008)}{4}{subsection.1.3.2}%
 \contentsline {section}{\numberline {1.4}Methods and Techniques}{5}{section.1.4}%
-\contentsline {section}{\numberline {1.5}Evaluation Framework}{5}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Software and Tools}{5}{section.1.6}%
-\contentsline {chapter}{\numberline {2}Exploratory Data Analysis}{6}{chapter.2}%
+\contentsline {subsection}{\numberline {1.4.1}Data Preprocessing and Integration}{5}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Statistical and Machine Learning Models}{5}{subsection.1.4.2}%
+\contentsline {section}{\numberline {1.5}Evaluation Framework}{6}{section.1.5}%
+\contentsline {section}{\numberline {1.6}Software and Tools}{6}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}Python}{6}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}Colab Notebook}{7}{subsection.1.6.2}%
+\contentsline {chapter}{\numberline {2}Exploratory Data Analysis}{8}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Crime Types by Ward}{8}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Crime Types by Time}{9}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Correlation Matrix Heatmap}{11}{section.2.3}%
+\contentsline {chapter}{\numberline {3}Results}{13}{chapter.3}%
