@@ -25,5 +25,6 @@
 \contentsline {section}{\numberline {3.3}Regression Analysis Results}{18}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}Model 1: Crime Count vs Median Household Income}{18}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}Model 2: Crime Count vs Median Household Income and Streetlight Count}{20}{subsection.3.3.2}%
-\contentsline {subsection}{\numberline {3.3.3}Discussion}{20}{subsection.3.3.3}%
-\contentsline {chapter}{\numberline {4}Conclusion}{21}{chapter.4}%
+\contentsline {subsection}{\numberline {3.3.3}Discussion \& Ethical Considerations}{20}{subsection.3.3.3}%
+\contentsline {chapter}{\numberline {4}Conclusion}{22}{chapter.4}%
+\contentsline {subsection}{\numberline {4.0.1}Future Work}{23}{subsection.4.0.1}%
