@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
+\usepackage{amsmath}
 \graphicspath{ {./graphs/} }
 \hypersetup{
 	linkcolor=blue,
@@ -206,17 +207,31 @@
     The proportion of nighttime crimes shows a weak positive correlation with income (0.14 and 0.16) and a moderate positive correlation with crime count (0.034), suggesting that night crimes may be slightly more prevalent in higher-crime, higher-income areas. These findings support further exploration into how streetlighting and income levels influence crime patterns, particularly at night.
     
     \chapter{Results}
+
+
+    \begin{figure}[ht]
+   	\begin{center}
+   		\advance\leftskip-3cm
+   		\advance\rightskip-3cm
+   		\includegraphics[keepaspectratio=true,scale=.5]{3d-cover}
+   		\caption{3D Regression Surface}
+   		\label{fig:crime-type-by-time}
+   	\end{center}
+   \end{figure}
+
     
-    \section*{Results}
-    
-    We applied Ridge Regression to analyze hourly crime counts across four police divisions in Tucson—East, Midtown, South, and West—using the hour of the day as the independent variable. This technique introduces a regularization penalty to reduce model variance and avoid overfitting. The regression model was trained separately for each division, and we evaluated model performance using three metrics: $R^2$ score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
+   \newpage
+    \section{Ridge Regression}
+    \par We applied Ridge Regression to analyze hourly crime counts across four police divisions in Tucson—East, Midtown, South, and West—using the hour of the day as the independent variable. This technique introduces a regularization penalty to reduce model variance and avoid overfitting. The regression model was trained separately for each division, and we evaluated model performance using three metrics: $R^2$ score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
     
     For each division, the model produced a linear equation of the form:
     
-    \begin{math}
-    	{CrimeCount} = \beta_0 + \beta_1({Hour})
-    \end{math}
-    
+    \begin{center}
+      \begin{math}
+    	\text{CrimeCount} = \beta_0 + \beta_1(\text{Hour})
+      \end{math}
+    \end{center}
+
     where the coefficients $\beta_0$ and $\beta_1$ varied by division. For example, in the South Division—the area with the most pronounced upward trend—the slope coefficient was highest, indicating a sharp increase in crime as the day progresses. In contrast, Midtown and East had lower slope coefficients, suggesting a more moderate hourly increase.
     
     The $R^2$ scores varied across divisions:
@@ -229,6 +244,8 @@
     MAE and MSE followed similar patterns. South Division had the lowest errors, reinforcing the strength of the model in that area. West Division had the highest error values, confirming the model's limited ability to account for the spread in crime counts, especially during peak hours.
     
     Overall, Ridge Regression successfully modeled the general trend of increasing crime throughout the day. However, the variability in model performance across divisions suggests that linear models may not be sufficient for capturing more complex patterns, particularly in areas with higher variance. Future analyses could explore nonlinear models or include additional predictors (e.g., day of the week or crime type) to enhance predictive accuracy.
+
+
     
        
  

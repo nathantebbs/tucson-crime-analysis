@@ -14,3 +14,4 @@
 \contentsline {section}{\numberline {2.2}Crime Types by Time}{9}{section.2.2}%
 \contentsline {section}{\numberline {2.3}Correlation Matrix Heatmap}{11}{section.2.3}%
 \contentsline {chapter}{\numberline {3}Results}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Ridge Regression}{14}{section.3.1}%
