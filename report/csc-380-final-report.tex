@@ -1,40 +1,36 @@
 \documentclass{report}
 \usepackage[utf8]{inputenc}
-\usepackage{color}   %May be necessary if you want to color links
+\usepackage{geometry} % Added for better margin control
+\geometry{margin=1in}
 \usepackage{booktabs}
-\usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{subcaption}
 \usepackage{float}
 \usepackage{amsmath}
-\graphicspath{ {./graphs/} }
-\hypersetup{
-  linkcolor=blue,
-  citecolor=blue,
-  urlcolor=blue,
-}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[
+  backend=biber,
+  style=alphabetic,
+  sorting=ynt
+]{biblatex}
+\addbibresource{references.bib}
+\usepackage[colorlinks=true, linkcolor=blue, citecolor=blue, urlcolor=blue]{hyperref} % Moved hyperref after biblatex
+\graphicspath{{./graphs/}}
+
 \title{\textbf{Patterns of Crime and Arrest Disparities in Tucson: A Multivariate Perspective}}
 \author{Nathan Tebbs \and Andrew Hicks \and Cole Hageman}
 \date{\today}
 
-
-
 \begin{document}
 \maketitle
 \tableofcontents
-
 
 \chapter{Introduction}
 
 In this project, we are studying how environmental and socioeconomic factors affect crime and arrest patterns in neighborhoods across Tucson, Arizona. Crime is not evenly spread throughout a city, and some areas may experience more police activity or higher arrest rates than others. We want to understand if these differences are related to things like income, housing values, or access to infrastructure such as street lighting.
 
 Our main goal is to find out whether certain neighborhood conditions are linked to higher crime or arrest rates. We also want to see if there are patterns in the data that suggest some areas are policed more heavily than others, even when crime levels are similar. These questions are important for making sure public safety policies are fair and based on evidence, not just assumptions.
-
-\section{Hypotheses}
-\begin{itemize}
-\item \textbf{Thefts/Violent Crime vs Area}: Do thefts and violent crimes occur more often in richer or poorer neighborhoods?
-\item \textbf{Crime Rate vs Streetlight Presence}: Does the existance/prescence of city streetlights influence crime rates?
-\end{itemize}
 
 \newpage
 \section{Objectives}
@@ -43,7 +39,7 @@ To study this, we are using public datasets from the City of Tucson. These inclu
 
 \begin{itemize}
 \item Do thefts and violent crimes occur more often in richer or poorer neighborhoods?
-\item Does the existance or prescence of city streetlights influence crime rates
+\item Does the existence or presence of city streetlights influence crime rates?
 \end{itemize}
 
 \section{Overview of Data}
@@ -61,23 +57,17 @@ This project uses multiple datasets to explore how socioeconomic and environment
   
 \item \textbf{Neighborhood Income}
   \par Neighborhood-level income data is drawn from a publicly available CSV that aggregates income estimates, likely based on census tract boundaries. This data will help us evaluate the economic conditions of each area and investigate how they relate to both crime rates and arrest disparities.
-  
-  
 \end{enumerate}
-
-
 
 \section{Related Works}
 
 \begin{itemize}
-\item \textbf{The Effects of Neighborhood Characteristics on Police Officers’ Decisions to Initiate Encounters” by Robin S. Engel, Michael R. Smith, and Robert E. Worden (2007)} \cite{welsh08}
-  \par The foundation of our project is supported by past research that explores the complex relationship between neighborhood-level conditions and disparities in crime and arrest patterns. Two key studies inform our approach to understanding how environmental and socioeconomic factors shape community-level justice outcomes.
+\item \textbf{Effects of Improved Street Lighting on Crime} by Welsh, B.C. and Farrington, D.P. (2008) \cite{welsh08}
+  \par This study examines the impact of improved street lighting on crime rates, finding that better lighting can reduce certain types of crime. This research informs our hypothesis about the relationship between streetlight presence and crime rates in Tucson.
   
-\item \textbf{The Effects of Neighborhood Characteristics on Police Officers’ Decisions to Initiate Encounters” by Robin S. Engel, Michael R. Smith, and Robert E. Worden (2007)} \cite{jr07}
-  \par This study investigates whether crime is randomly distributed across urban space or concentrated in specific locations. Weisburd et al. analyze 16 years of crime data from Seattle and find that a small number of street segments account for a large and stable share of total crime, suggesting that crime hot spots are persistent over time. This research is important to our project because it highlights the spatial concentration of crime and the value of analyzing crime at a micro-geographic level. It supports the idea that certain areas consistently experience higher levels of crime, which informs our efforts to identify and interpret crime patterns across Tucson neighborhoods.
-  \par 
+\item \textbf{Income Inequality, Race, and Place: Does the Distribution of Race and Class Within Neighborhoods Affect Crime Rates?} by Hipp, J.R. (2007) \cite{jr07}
+  \par This study investigates the relationship between income inequality, race, and neighborhood crime rates. Hipp finds that income disparities within neighborhoods significantly influence crime, supporting our analysis of socioeconomic factors in Tucson.
 \end{itemize}
-
 
 \newpage
 \section{Methods and Techniques}
@@ -88,7 +78,7 @@ This project uses multiple datasets to explore how socioeconomic and environment
 
 \begin{itemize}
 \item \textbf{Data Cleaning and Standardization}
-  \par Five datasets were used—Tucson Police Reported Crimes, Tucson Police Arrests, City of Tucson Streetlight Locations, Neighborhood Income Python libraries such as pandas, numpy, and geopandas were used to load and process the data. Key steps included converting DateOccurred to datetime, categorizing crimes based on TimeOccur (e.g., Night), and removing rows with missing values in critical fields like Ward.
+  \par Five datasets were used—Tucson Police Reported Crimes, Tucson Police Arrests, City of Tucson Streetlight Locations, Neighborhood Income. Python libraries such as pandas, numpy, and geopandas were used to load and process the data. Key steps included converting DateOccurred to datetime, categorizing crimes based on TimeOccur (e.g., Night), and removing rows with missing values in critical fields like Ward.
   
 \item \textbf{Feature Standardization}
   \par Ward values were standardized as integers across datasets. Arrest records were filtered for valid coordinates and Ward information. Streetlight data was limited to active lights with numeric Wattage. Income data was refined to include only WARD, MEDHINC\textunderscore CY, and AVGHINC\textunderscore CY.
@@ -148,14 +138,11 @@ For example, Ward 3 reports the highest crime count, approaching 25,000 incident
 
 Violent crimes such as Aggravated Assault (red) and Robbery (green) are more prevalent in higher-crime wards—particularly Wards 3 and 5—suggesting a potential correlation with ward-specific characteristics like income levels, housing density, or other socioeconomic indicators. This distribution supports Hypothesis 1, which posits that violent and property crimes may cluster in areas with specific income profiles, prompting further investigation into socioeconomic disparities across wards.
 
-\begin{figure}[ht]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.6]{crime-types-by-ward}
-    \caption{Prevelance of Crime Type per Ward}
-    \label{fig:crime-type-by-ward}
-  \end{center}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{crime-types-by-ward.png}
+  \caption{Prevalence of Crime Type per Ward}
+  \label{fig:crime-type-by-ward}
 \end{figure}
 
 \newpage
@@ -166,47 +153,32 @@ Although violent crimes such as Robbery and Assault account for a slightly large
 
 The high incidence of Larceny during the Afternoon and Evening may be linked to greater public activity during those hours, which increases opportunities for theft. In terms of mitigation, these findings suggest that increasing streetlight density could specifically help deter nighttime Robbery and Assault, though such efforts may have limited impact on overall crime, given Larceny's dominance and its timing.
 
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{crime-types-by-time.png}
+  \caption{Prevalence of Crime Type by Time Period}
+  \label{fig:crime-type-by-time}
+\end{figure}
 
 \newpage
-\begin{figure}[h]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.6]{crime-types-by-time}
-    \caption{Prevelance of Crime Type by Time Period}
-    \label{fig:crime-type-by-time}
-  \end{center}
+\par To further refine this temporal analysis, the histogram “Crime Count by Hour of Day” in Figure \ref{fig:crime-by-hour}, provides a granular view of crime distribution across the 24-hour cycle. Crime counts remain low from midnight to 6 AM, typically below 2,000 incidents, reflecting reduced activity during these hours. A sharp increase begins around 7 AM, peaking between 10 AM and 2 PM with counts exceeding 6,000 incidents, indicating a midday surge likely driven by Larceny and other opportunistic crimes. The count gradually declines after 2 PM but remains elevated through the evening, with a secondary peak around 6 PM to 8 PM, aligning with the Evening period’s high Larceny rates. Post-10 PM, crime counts taper off, consistent with the lower Night period totals. The kernel density curve smooths these trends, confirming a bimodal pattern with peaks at midday and early evening. This hourly breakdown reinforces the time period analysis, suggesting that crime prevention efforts should focus on peak activity hours, particularly 10 AM to 8 PM, while night-specific interventions like streetlighting could target the post-10 PM decline to further reduce residual crime.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{crime-by-hour.png}
+  \caption{Total Crimes per Hour Throughout the 24 Hour Period}
+  \label{fig:crime-by-hour}
 \end{figure}
-
-
-\par To further refine this temporal analysis, the histogram “Crime Count by Hour of Day” in Figure \ref{fig:crime-by-hour}, provides a granular view of crime distribution across the 24-hour cycle. Crime counts remain low from midnight to 6 AM, typically below 2,000 incidents, reflecting reduced activity during these hours. A sharp increase begins around 7 AM, peaking between 10 AM and 2 PM with counts exceeding 6,000 incidents, indicating a midday surge likely driven by Larceny and other opportunistic crimes. The count gradually declines after 2 PM but remains elevated through the evening, with a secondary peak around 6 PM to 8 PM, aligning with the Evening period’s high Larceny rates. Post-10 PM, crime counts taper off, consistent with the lower Night period totals. The kernel density curve smooths these trends, confirming a bimodal pattern with peaks at midday and early evening. This hourly breakdown reinforces the time period analysis, suggesting that crime prevention efforts should focus on peak activity hours, particularly 10 AM to 8 PM, while night-specific interventions like streetlighting could target the post-10 PM decline to further reduce residual crime
-
-\begin{figure}[ht]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.6]{crime-by-hour}
-    \caption{Total Crimes per Hour Throughout the 24 Hour Period}
-    \label{fig:crime-by-hour}
-  \end{center}
-\end{figure}
-
-
 
 \newpage
 \section{Correlation Matrix Heatmap}
 \par The heatmap provided in Figure \ref{fig:heatmap} is a correlation matrix that illustrates the relationships between various variables: median household income (MEDHINC\_CY), average household income (AVGHINC\_CY), streetlight count (Streetlight\_Count), crime count (Crime\_Count), arrest count (Arrest\_Count), and the proportion of nighttime crimes (Night\_Crime\_Prop). The color intensity and values (ranging from $-1.0$ to $1.0$) indicate the strength and direction of the correlation, with positive values showing a direct relationship and negative values indicating an inverse relationship.
 
-
-
-\begin{figure}[ht!]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.6]{heatmap}
-    \caption{Correlation Matrix Heatmap}
-    \label{fig:heatmap}
-  \end{center}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{heatmap.png}
+  \caption{Correlation Matrix Heatmap}
+  \label{fig:heatmap}
 \end{figure}
 
 \subsection{Key Insights}
@@ -225,17 +197,12 @@ The high incidence of Larceny during the Afternoon and Evening may be linked to 
 
 \chapter{Results}
 
-
-\begin{figure}[ht]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.5]{3d-cover}
-    \caption{3D Regression Surface}
-    \label{fig:3d-cover}
-  \end{center}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{3d-cover.png}
+  \caption{3D Regression Surface}
+  \label{fig:3d-cover}
 \end{figure}
-
 
 \newpage
 \section{Ridge Regression}
@@ -262,15 +229,11 @@ MAE and MSE followed similar patterns. South Division had the lowest errors, rei
 
 Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg}, successfully modeled the general trend of increasing crime throughout the day. However, the variability in model performance across divisions suggests that linear models may not be sufficient for capturing more complex patterns, particularly in areas with higher variance. Future analyses could explore nonlinear models or include additional predictors (e.g., day of the week or crime type) to enhance predictive accuracy.
 
-\newpage
-\begin{figure}[h!]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.5]{ridge-reg}
-    \caption{Ridge Regression}
-    \label{fig:ridge-reg}
-  \end{center}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=1.0\textwidth]{ridge-reg.png}
+  \caption{Ridge Regression}
+  \label{fig:ridge-reg}
 \end{figure}
 
 \newpage
@@ -280,10 +243,9 @@ Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg}, successfully mode
 \subsection{Random Forest Performance}
 \par This section implements RF and LR models to predict whether a ward has a high crime rate, using predictors related like income, streetlight presence, and crime timing. It also evaluates model performance and interprets which features are most important.
 
-\par The Random Forest model achieved an accuracy of 0.97 and an F1-score of 0.95, indicating strong predictive performance. The classification report is summarized in Table \ref{tab:rf_classification_report}.
+\par The Random Forest model achieved an accuracy of 0.97 and an F1-score of 0.95, indicating strong predictive performance. The classification report is summarized in Table \ref{tab:rf_classification_report}
 
-
-\begin{table}[h!]
+\begin{table}[htbp]
   \centering
   \caption{Random Forest Classification Report}
   \label{tab:rf_classification_report}
@@ -301,25 +263,35 @@ Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg}, successfully mode
   \end{tabular}
 \end{table}
 
+\par Feature importance analysis, seen in Figure \ref{fig:random-forest} reveals Streetlight\_Count as the most influential predictor (importance score 0.5), followed by MEDHINC\_textunderscore CY and AVGHINC\_CY (0.25 each), suggesting that urban infrastructure plays a significant role in crime prediction, potentially more than socioeconomic factors. This partially supports the hypothesis that streetlight presence influences crime rates, though the positive correlation noted elsewhere suggests a reactive rather than preventive effect.
+
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=.6\textwidth]{random-forest.png}
+  \caption{Feature Importance}
+  \label{fig:random-forest}
+\end{figure}
+
+\newpage
 \subsection{Logistic Regression Performance}
 The Logistic Regression model yielded an accuracy of 0.75 and an F1-score of 0.71, performing less effectively than the Random Forest model. The classification report is detailed in Table~\ref{tab:lr_classification_report}.
 
-\begin{table}[h!]
-\centering
-\caption{Logistic Regression Classification Report}
-\label{tab:lr_classification_report}
-\begin{tabular}{lcccc}
-\toprule
- & Precision & Recall & F1-Score & Support \\
-\midrule
-Class 0 (Low Crime) & 1.00 & 0.64 & 0.78 & 22 \\
-Class 1 (High Crime) & 0.56 & 1.00 & 0.71 & 10 \\
-\midrule
-Accuracy & \multicolumn{3}{c}{0.75} & 32 \\
-Macro Avg & 0.78 & 0.82 & 0.75 & 32 \\
-Weighted Avg & 0.86 & 0.75 & 0.76 & 32 \\
-\bottomrule
-\end{tabular}
+\begin{table}[htbp]
+  \centering
+  \caption{Logistic Regression Classification Report}
+  \label{tab:lr_classification_report}
+  \begin{tabular}{lcccc}
+    \toprule
+    & Precision & Recall & F1-Score & Support \\
+    \midrule
+    Class 0 (Low Crime) & 1.00 & 0.64 & 0.78 & 22 \\
+    Class 1 (High Crime) & 0.56 & 1.00 & 0.71 & 10 \\
+    \midrule
+    Accuracy & \multicolumn{3}{c}{0.75} & 32 \\
+    Macro Avg & 0.78 & 0.82 & 0.75 & 32 \\
+    Weighted Avg & 0.86 & 0.75 & 0.76 & 32 \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 \subsection{Feature Importance Analysis}
@@ -331,70 +303,65 @@ The Random Forest model's feature importance analysis revealed that the number o
 \par This section presents the results of two Ordinary Least Squares (OLS) regression models to analyze the impact of Median Household Income (MEDHINC\_CY) and Streetlight Count (Streetlight\_Count) on Crime Count. The models address the hypotheses: (1) whether thefts and violent crimes occur more often in richer or poorer neighborhoods, and (2) whether the presence of streetlights influences crime rates.
 
 \subsection{Model 1: Crime Count vs Median Household Income}
-\par The first OLS regression model, seen in Figure \ref{fig:cime-count-income}, examines the relationship between Crime Count and Median Household Income (MEDHINC\_CY). The model summary is presented in Table~\ref{tab:model1_summary}.
+\par The first OLS regression model, seen in Figure \ref{fig:crime-count-income}, examines the relationship between Crime Count and Median Household Income (MEDHINC\_CY). The model summary is presented in Table~\ref{tab:model1_summary}.
 
-\newpage
-\begin{table}[h!]
-\centering
-\caption{OLS Regression Summary}
-\label{tab:model1_summary}
-\begin{tabular}{lccccc}
-\toprule
- & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
-\midrule
-Constant & 30690 & 1244.395 & 24.662 & 0.000 & [28240, 33140] \\
-MEDHINC\_CY & -0.1067 & 0.025 & -4.199 & 0.000 & [-0.157, -0.057] \\
-\midrule
-\multicolumn{6}{l}{R-squared: 0.101, Adjusted R-squared: 0.095} \\
-\multicolumn{6}{l}{F-statistic: 17.63, Prob (F-statistic): 4.48e-05} \\
-\bottomrule
-\end{tabular}
+\begin{table}[htbp]
+  \centering
+  \caption{OLS Regression Summary}
+  \label{tab:model1_summary}
+  \begin{tabular}{lccccc}
+    \toprule
+    & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
+    \midrule
+    Constant & 30690 & 1244.395 & 24.662 & 0.000 & [28240, 33140] \\
+    MEDHINC\_CY & -0.1067 & 0.025 & -4.199 & 0.000 & [-0.157, -0.057] \\
+    \midrule
+    \multicolumn{6}{l}{R-squared: 0.101, Adjusted R-squared: 0.095} \\
+    \multicolumn{6}{l}{F-statistic: 17.63, Prob (F-statistic): 4.48e-05} \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
 \par The negative coefficient for MEDHINC\_CY (-0.1067, p $<$ 0.001) indicates a statistically significant inverse relationship between median household income and crime count. As median income increases by one unit, crime count decreases by approximately 0.1067 units, supporting Hypothesis 1 that crime rates are higher in poorer neighborhoods. The R-squared value of 0.101 suggests that 10.1\% of the variance in crime count is explained by median household income alone, indicating a modest but significant relationship. The scatterplot of Crime Count vs Median Household Income visually confirms this downward trend, showing higher crime counts at lower income levels.
 
-
-\begin{figure}[h!]
-  \begin{center}
-    \advance\leftskip-3cm
-    \advance\rightskip-3cm
-    \includegraphics[keepaspectratio=true,scale=.6]{cime-count-income}
-    \caption{Crime Count vs Median Household Income}
-    \label{fig:cime-count-income}
-  \end{center}
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=0.8\textwidth]{crime-count-income.png}
+  \caption{Crime Count vs Median Household Income}
+  \label{fig:crime-count-income}
 \end{figure}
 
 \newpage
 \subsection{Model 2: Crime Count vs Median Household Income and Streetlight Count}
 The second OLS regression model, seen in Figure \ref{fig:3d-cover}, includes both Median Household Income (MEDHINC\_CY) and Streetlight Count as predictors of Crime Count. The model summary is shown in Table~\ref{tab:model2_summary}.
 
-
-\begin{table}[h!]
-\centering
-\caption{OLS Regression Summary: Crime Count vs Median Household Income and Streetlight Count}
-\label{tab:model2_summary}
-\begin{tabular}{lccccc}
-\toprule
- & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
-\midrule
-Constant & 22560 & 1252.670 & 18.010 & 0.000 & [20100, 25020] \\
-Streetlight\_Count & 0.3069 & 0.030 & 10.205 & 0.000 & [0.247, 0.366] \\
-MEDHINC\_CY & -0.1281 & 0.020 & -6.454 & 0.000 & [-0.167, -0.089] \\
-\midrule
-\multicolumn{6}{l}{R-squared: 0.461, Adjusted R-squared: 0.454} \\
-\multicolumn{6}{l}{F-statistic: 66.67, Prob (F-statistic): 1.18e-21} \\
-\bottomrule
-\end{tabular}
+\begin{table}[htbp]
+  \centering
+  \caption{OLS Regression Summary: Crime Count vs Median Household Income and Streetlight Count}
+  \label{tab:model2_summary}
+  \begin{tabular}{lccccc}
+    \toprule
+    & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
+    \midrule
+    Constant & 22560 & 1252.670 & 18.010 & 0.000 & [20100, 25020] \\
+    Streetlight\_Count & 0.3069 & 0.030 & 10.205 & 0.000 & [0.247, 0.366] \\
+    MEDHINC\_CY & -0.1281 & 0.020 & -6.454 & 0.000 & [-0.167, -0.089] \\
+    \midrule
+    \multicolumn{6}{l}{R-squared: 0.461, Adjusted R-squared: 0.454} \\
+    \multicolumn{6}{l}{F-statistic: 66.67, Prob (F-statistic): 1.18e-21} \\
+    \bottomrule
+  \end{tabular}
 \end{table}
 
-\par This model shows improved explanatory power with an $R^2$ of 0.461, indicating that 46.1\% of the variance in crime count is explained by the combination of median household income and streetlight count. Both predictors are statistically significant (p $<$ 0.001). The coefficient for Streetlight\_Count (0.3069) suggests a positive relationship with crime count, meaning that an increase in streetlights is associated with an increase in crime, which is contrary to Hypothesis 2 that streetlight presence reduces crime rates. The coefficient for MEDHINC\_CY (-0.1281) remains negative and significant, reinforcing the finding from Model 1 that higher income is associated with lower crime counts. The 3D regression surface plot illustrates this relationship, showing a downward slope with respect to median household income and an upward slope with respect to streetlight count.
+\par This model shows improved explanatory power with an $R^2$ of 0.461, indicating that 46.1\% of the variance in crime count is explained by the combination of median household income and streetlight count. Both predictors are statistically significant (p $<$ 0.001). The coefficient for Streetlight\_Count (0.3069) suggests a positive relationship with crime count, meaning that an increase in streetlights is associated with an increase in crime, which is contrary to Hypothesis 2,
+that streetlight presence reduces crime rates. The coefficient for MEDHINC\_CY (-0.1281) remains negative and significant, reinforcing the finding from Model 1 that higher income is associated with lower crime counts. The 3D regression surface plot illustrates this relationship, showing a downward slope with respect to median household income and an upward slope with respect to streetlight count.
 
 \subsection{Discussion \& Ethical Considerations}
 \par The regression analysis provides insights into the relationships between crime count, median household income, and streetlight presence. Model 1 confirms Hypothesis 1, showing that crime counts are higher in poorer neighborhoods, as evidenced by the significant negative coefficient for MEDHINC\_CY. Model 2, however, challenges Hypothesis 2: while the Random Forest feature importance analysis (from the previous section) highlighted Streetlight\_Count as the most influential predictor, the positive coefficient in the OLS model suggests that areas with more streetlights experience higher crime counts. This could indicate that streetlights are more commonly installed in high-crime areas as a response to crime, rather than as a deterrent. The combined explanatory power of income and streetlight count in Model 2 ($R^2$ = 0.461) underscores the importance of considering both socioeconomic and infrastructural factors when analyzing crime patterns.
 
-\par This analysis of crime patterns in Tucson, while informative for us, and the end-user, still raises some ethical concerns surrounding data use, analytical methods, and real-world applications— especially predictive policing. For example,  while the datasets used offered valuable insights, they also presented biases when examined closely. Notably, there could be over-policing in lower-income areas, potentially skewing results and reinforcing stereotypes about poverty and crime. Likewise, the streetlight dataset assumes uniform effectiveness of lighting without accounting for factors like maintenance or perceived safety.
+\par This analysis of crime patterns in Tucson, while informative for us, and the end-user, still raises some ethical concerns surrounding data use, analytical methods, and real-world applications— especially predictive policing. For example, while the datasets used offered valuable insights, they also presented biases when examined closely. Notably, there could be over-policing in lower-income areas, potentially skewing results and reinforcing stereotypes about poverty and crime. Likewise, the streetlight dataset assumes uniform effectiveness of lighting without accounting for factors like maintenance or perceived safety.
 
-\par Furthermore,  the correlation analysis and spatial joins can highlight associations, but they could also be misinterpreted as evidence of causation, such as a negative correlation between streetlight density and nighttime crime, leading to an overemphasis on lighting being the sole issue, rather than pre-existing social issues. Unfortunately, the use of machine learning models only exploits these connections, adding further reinforcement to existing disparities.  Therefore, it is important to take heed that while our analysis highlights key connections between crime in Tucson with surrounding factors, there still exists a standard to uphold in the name of ethical rigor in crime data research. Transparency is key, and can help avoid reinforcing inequality among people, and cities as a whole.
+\par Furthermore, the correlation analysis and spatial joins can highlight associations, but they could also be misinterpreted as evidence of causation, such as a negative correlation between streetlight density and nighttime crime, leading to an overemphasis on lighting being the sole issue, rather than pre-existing social issues. Unfortunately, the use of machine learning models only exploits these connections, adding further reinforcement to existing disparities. Therefore, it is important to take heed that while our analysis highlights key connections between crime in Tucson with surrounding factors, there still exists a standard to uphold in the name of ethical rigor in crime data research. Transparency is key, and can help avoid reinforcing inequality among people, and cities as a whole.
 
 \chapter{Conclusion}
 
@@ -413,19 +380,7 @@ MEDHINC\_CY & -0.1281 & 0.020 & -6.454 & 0.000 & [-0.167, -0.089] \\
 
 Overall, this study provides a robust foundation for understanding crime and arrest disparities in Tucson, highlighting the interplay of socioeconomic and environmental factors. By addressing the identified limitations and pursuing the proposed future work, policymakers and researchers can develop evidence-based strategies to enhance public safety while promoting fairness and equity across Tucson's diverse neighborhoods.
 
-
-\begin{thebibliography}{9}
-\bibitem{welsh08}
-  Welsh, B.C. and Farrington, D.P. (2008), Effects of Improved Street Lighting on Crime. Campbell Systematic Reviews, 4: 1-51. https://doi.org/10.4073/csr.2008.13
-\bibitem{jr07}
-  Hipp, J.R. (2007), Income Inequality, Race, and Place: Does the Distribution of Race and Class Within Neighborhoods Affect Crime Rates? Criminology, 45: 665-697. https://doi.org/10.1111/j.1745-9125.2007.00088.x
-\bibitem{tucson_crime}
-  City of Tucson (2023), Tucson Police Reported Crimes Dataset. Available at: https://data.tucsonaz.gov/
-\bibitem{tucson_arrests}
-  City of Tucson (2023), Tucson Police Arrests Dataset. Available at: https://data.tucsonaz.gov/
-\bibitem{tucson_streetlights}
-  City of Tucson (2023), City of Tucson Streetlight Locations Dataset. Available at: https://data.tucsonaz.gov/
-\bibitem{tucson_income}
-  City of Tucson (2023), Neighborhood Income Dataset. Available at: https://data.tucsonaz.gov/
-\end{thebibliography}
+\newpage
+\nocite{*}
+\printbibliography[heading=bibintoc]
 \end{document}

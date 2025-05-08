@@ -1,0 +1,196 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{ynt/global//global/global/global}
+    \entry{jr07}{article}{}{}
+      \name{author}{1}{}{%
+        {{hash=9b8e62854317f5b304bddff29eb2693a}{%
+           family={Hipp},
+           familyi={H\bibinitperiod},
+           given={J.R.},
+           giveni={J\bibinitperiod}}}%
+      }
+      \strng{namehash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{fullhash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{fullhashraw}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{bibnamehash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{authorbibnamehash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{authornamehash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{authorfullhash}{9b8e62854317f5b304bddff29eb2693a}
+      \strng{authorfullhashraw}{9b8e62854317f5b304bddff29eb2693a}
+      \field{labelalpha}{Hip07}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Criminology}
+      \field{title}{Income Inequality, Race, and Place: Does the Distribution of Race and Class Within Neighborhoods Affect Crime Rates?}
+      \field{volume}{45}
+      \field{year}{2007}
+      \field{pages}{665\bibrangedash 697}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1111/j.1745-9125.2007.00088.x
+      \endverb
+    \endentry
+    \entry{welsh08}{article}{}{}
+      \name{author}{2}{}{%
+        {{hash=b8766d43ed9610611286457423ce84cf}{%
+           family={Welsh},
+           familyi={W\bibinitperiod},
+           given={B.C.},
+           giveni={B\bibinitperiod}}}%
+        {{hash=2cba4ce4b88115f94af9b208c1ddc5ed}{%
+           family={Farrington},
+           familyi={F\bibinitperiod},
+           given={D.P.},
+           giveni={D\bibinitperiod}}}%
+      }
+      \strng{namehash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{fullhash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{fullhashraw}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{bibnamehash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{authorbibnamehash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{authornamehash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{authorfullhash}{571cb1d0ab8e7f7075555792814e3892}
+      \strng{authorfullhashraw}{571cb1d0ab8e7f7075555792814e3892}
+      \field{labelalpha}{WF08}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Campbell Systematic Reviews}
+      \field{title}{Effects of Improved Street Lighting on Crime}
+      \field{volume}{4}
+      \field{year}{2008}
+      \field{pages}{1\bibrangedash 51}
+      \range{pages}{51}
+      \verb{doi}
+      \verb 10.4073/csr.2008.13
+      \endverb
+    \endentry
+    \entry{tucson_streetlights}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa4996d5dbe770170290a92dae6990f1}{%
+           family={{City of Tucson}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{bibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorbibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authornamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \field{extraname}{1}
+      \field{labelalpha}{Cit23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraalpha}{1}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://drive.google.com/file/d/1PWVC5zM-AffD-WDhN-9h5rAeCRRMRtac/view}}
+      \field{title}{City of Tucson Streetlight Locations Dataset}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+    \entry{tucson_income}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa4996d5dbe770170290a92dae6990f1}{%
+           family={{City of Tucson}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{bibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorbibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authornamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \field{extraname}{2}
+      \field{labelalpha}{Cit23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraalpha}{2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://drive.google.com/file/d/1_Ys0zVHxuI-XVIq5UpbJJW0Y7Lf0_rPA/view}}
+      \field{title}{Neighborhood Income Dataset}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+    \entry{tucson_arrests}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa4996d5dbe770170290a92dae6990f1}{%
+           family={{City of Tucson}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{bibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorbibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authornamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \field{extraname}{3}
+      \field{labelalpha}{Cit23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraalpha}{3}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://drive.google.com/file/d/1bJnk0YaQ8xNQAeIJLMWA87VILOG2tEsl/view}}
+      \field{title}{Tucson Police Arrests Dataset}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+    \entry{tucson_crime}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=aa4996d5dbe770170290a92dae6990f1}{%
+           family={{City of Tucson}},
+           familyi={C\bibinitperiod}}}%
+      }
+      \strng{namehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{fullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{bibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorbibnamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authornamehash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhash}{aa4996d5dbe770170290a92dae6990f1}
+      \strng{authorfullhashraw}{aa4996d5dbe770170290a92dae6990f1}
+      \field{extraname}{4}
+      \field{labelalpha}{Cit23}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{extraalpha}{4}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://drive.google.com/file/d/161iT39q-IjdAwfS4nYs8reUbW9VMtub1/view}}
+      \field{title}{Tucson Police Reported Crimes Dataset}
+      \field{year}{2023}
+      \true{nocite}
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
