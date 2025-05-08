@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 23:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 23:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -578,8 +578,15 @@ Underfull \hbox (badness 2065) in paragraph at lines 419--420
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 421--422
-[]\OT1/cmr/m/n/10 HIPP, J.R. (2007), IN-COME IN-EQUAL-ITY, RACE, AND PLACE:
+Underfull \hbox (badness 1052) in paragraph at lines 425--426
+[]\OT1/cmr/m/n/10 City of Tuc-son (2023), Tuc-son Po-lice Ar-rests Dataset. Ava
+il-able at:
+ []
+
+
+Underfull \hbox (badness 1348) in paragraph at lines 429--430
+[]\OT1/cmr/m/n/10 City of Tuc-son (2023), Neigh-bor-hood In-come Dataset. Avail
+-able at:
  []
 
 
@@ -591,14 +598,18 @@ Underfull \hbox (badness 1466) in paragraph at lines 421--422
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
 Package rerunfilecheck Info: File `csc-380-final-report.out' has not changed.
 (rerunfilecheck)             Checksum: 8DAE6617C5828B68748C714F90C7C9DF;5288.
  ) 
 Here is how much of TeX's memory you used:
- 11057 strings out of 469608
- 177692 string characters out of 5470607
+ 11065 strings out of 469608
+ 177836 string characters out of 5470607
  568994 words of memory out of 5000000
- 37696 multiletter control sequences out of 15000+600000
+ 37700 multiletter control sequences out of 15000+600000
  634062 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,79p,1238b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -610,10 +621,10 @@ sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
 cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on csc-380-final-report.pdf (25 pages, 696840 bytes).
+Output written on csc-380-final-report.pdf (25 pages, 696706 bytes).
 PDF statistics:
- 375 PDF objects out of 1000 (max. 8388607)
- 314 compressed objects within 4 object streams
- 74 named destinations out of 1000 (max. 500000)
+ 379 PDF objects out of 1000 (max. 8388607)
+ 318 compressed objects within 4 object streams
+ 78 named destinations out of 1000 (max. 500000)
  276 words of extra memory for PDF output out of 10000 (max. 10000000)
 
