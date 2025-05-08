@@ -1,7 +1,7 @@
 \documentclass{report}
 \usepackage[utf8]{inputenc}
 \usepackage{color}   %May be necessary if you want to color links
-
+\usepackage{booktabs}
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{subcaption}
@@ -29,6 +29,12 @@
 In this project, we are studying how environmental and socioeconomic factors affect crime and arrest patterns in neighborhoods across Tucson, Arizona. Crime is not evenly spread throughout a city, and some areas may experience more police activity or higher arrest rates than others. We want to understand if these differences are related to things like income, housing values, or access to infrastructure such as street lighting.
 
 Our main goal is to find out whether certain neighborhood conditions are linked to higher crime or arrest rates. We also want to see if there are patterns in the data that suggest some areas are policed more heavily than others, even when crime levels are similar. These questions are important for making sure public safety policies are fair and based on evidence, not just assumptions.
+
+\section{Hypotheses}
+\begin{itemize}
+\item \textbf{Thefts/Violent Crime vs Area}: Do thefts and violent crimes occur more often in richer or poorer neighborhoods?
+\item \textbf{Crime Rate vs Streetlight Presence}: Does the existance/prescence of city streetlights influence crime rates?
+\end{itemize}
 
 \newpage
 \section{Objectives}
@@ -167,7 +173,7 @@ The high incidence of Larceny during the Afternoon and Evening may be linked to 
     \advance\leftskip-3cm
     \advance\rightskip-3cm
     \includegraphics[keepaspectratio=true,scale=.6]{crime-types-by-time}
-    \caption{Prevelance of Crime Type per Ward}
+    \caption{Prevelance of Crime Type by Time Period}
     \label{fig:crime-type-by-time}
   \end{center}
 \end{figure}
@@ -233,7 +239,7 @@ The high incidence of Larceny during the Afternoon and Evening may be linked to 
 
 \newpage
 \section{Ridge Regression}
-\par We applied Ridge Regression to analyze hourly crime counts across four police divisions in Tucson—East, Midtown, South, and West—using the hour of the day as the independent variable. This technique introduces a regularization penalty to reduce model variance and avoid overfitting. The regression model was trained separately for each division, and we evaluated model performance using three metrics: $R^2$ score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
+\par We applied Ridge Regression, seen in Figure \ref{fig:ridge-reg}, to analyze hourly crime counts across four police divisions in Tucson—East, Midtown, South, and West—using the hour of the day as the independent variable. This technique introduces a regularization penalty to reduce model variance and avoid overfitting. The regression model was trained separately for each division, and we evaluated model performance using three metrics: $R^2$ score, Mean Absolute Error (MAE), and Mean Squared Error (MSE).
 
 For each division, the model produced a linear equation of the form:
 
@@ -254,9 +260,10 @@ The $R^2$ scores varied across divisions:
 
 MAE and MSE followed similar patterns. South Division had the lowest errors, reinforcing the strength of the model in that area. West Division had the highest error values, confirming the model's limited ability to account for the spread in crime counts, especially during peak hours.
 
-Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg} successfully modeled the general trend of increasing crime throughout the day. However, the variability in model performance across divisions suggests that linear models may not be sufficient for capturing more complex patterns, particularly in areas with higher variance. Future analyses could explore nonlinear models or include additional predictors (e.g., day of the week or crime type) to enhance predictive accuracy.
+Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg}, successfully modeled the general trend of increasing crime throughout the day. However, the variability in model performance across divisions suggests that linear models may not be sufficient for capturing more complex patterns, particularly in areas with higher variance. Future analyses could explore nonlinear models or include additional predictors (e.g., day of the week or crime type) to enhance predictive accuracy.
 
-\begin{figure}[ht]
+\newpage
+\begin{figure}[h!]
   \begin{center}
     \advance\leftskip-3cm
     \advance\rightskip-3cm
@@ -266,7 +273,124 @@ Overall, Ridge Regression, seen in Figure \ref{fig:ridge-reg} successfully model
   \end{center}
 \end{figure}
 
+\newpage
+\section{Model Performance Evaluation}
+\par The Random Forest (RF) and Logistic Regression (LR) models were evaluated to predict high-crime wards based on median household income (MEDHINC\_CY), average household income (AVGHINC\_CY), and streetlight presence (Streetlight\_Count). Performance metrics including accuracy, F1-score, and detailed classification reports are presented below.
 
+\subsection{Random Forest Performance}
+\par This section implements RF and LR models to predict whether a ward has a high crime rate, using predictors related like income, streetlight presence, and crime timing. It also evaluates model performance and interprets which features are most important.
+
+\par The Random Forest model achieved an accuracy of 0.97 and an F1-score of 0.95, indicating strong predictive performance. The classification report is summarized in Table \ref{tab:rf_classification_report}.
+
+
+\begin{table}[h!]
+  \centering
+  \caption{Random Forest Classification Report}
+  \label{tab:rf_classification_report}
+  \begin{tabular}{lcccc}
+    \toprule
+    & Precision & Recall & F1-Score & Support \\
+    \midrule
+    Class 0 (Low Crime) & 1.00 & 0.95 & 0.98 & 22 \\
+    Class 1 (High Crime) & 0.91 & 1.00 & 0.95 & 10 \\
+    \midrule
+    Accuracy & \multicolumn{3}{c}{0.97} & 32 \\
+    Macro Avg & 0.95 & 0.98 & 0.96 & 32 \\
+    Weighted Avg & 0.97 & 0.97 & 0.97 & 32 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Logistic Regression Performance}
+The Logistic Regression model yielded an accuracy of 0.75 and an F1-score of 0.71, performing less effectively than the Random Forest model. The classification report is detailed in Table~\ref{tab:lr_classification_report}.
+
+\begin{table}[h!]
+\centering
+\caption{Logistic Regression Classification Report}
+\label{tab:lr_classification_report}
+\begin{tabular}{lcccc}
+\toprule
+ & Precision & Recall & F1-Score & Support \\
+\midrule
+Class 0 (Low Crime) & 1.00 & 0.64 & 0.78 & 22 \\
+Class 1 (High Crime) & 0.56 & 1.00 & 0.71 & 10 \\
+\midrule
+Accuracy & \multicolumn{3}{c}{0.75} & 32 \\
+Macro Avg & 0.78 & 0.82 & 0.75 & 32 \\
+Weighted Avg & 0.86 & 0.75 & 0.76 & 32 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Feature Importance Analysis}
+The Random Forest model's feature importance analysis revealed that the number of streetlights (Streetlight\_Count) was the most influential predictor of high-crime wards, with an importance score of approximately 0.5. Median household income (MEDHINC\_CY) and average household income (AVGHINC\_CY) followed, with importance scores around 0.25 each. This suggests that the presence of streetlights has a stronger association with crime rates compared to income levels, providing partial support for the hypothesis that streetlight presence influences crime rates. However, the income-related features still contribute meaningfully, indicating that wealth levels in neighborhoods also play a role in predicting crime, aligning with the hypothesis that thefts and violent crimes may vary between richer and poorer areas.
+\par The Random Forest model outperformed Logistic Regression in predicting high-crime wards, with higher accuracy and F1-scores. The feature importance analysis highlights the significant role of streetlight presence in predicting crime rates, suggesting that urban infrastructure may influence crime more than socioeconomic factors like income in this dataset. These findings support the hypothesis that streetlight presence impacts crime rates and indicate a moderate relationship between crime and neighborhood wealth levels.
+
+\section{Regression Analysis Results}
+
+\par This section presents the results of two Ordinary Least Squares (OLS) regression models to analyze the impact of Median Household Income (MEDHINC\_CY) and Streetlight Count (Streetlight\_Count) on Crime Count. The models address the hypotheses: (1) whether thefts and violent crimes occur more often in richer or poorer neighborhoods, and (2) whether the presence of streetlights influences crime rates.
+
+\subsection{Model 1: Crime Count vs Median Household Income}
+\par The first OLS regression model, seen in Figure \ref{fig:cime-count-income}, examines the relationship between Crime Count and Median Household Income (MEDHINC\_CY). The model summary is presented in Table~\ref{tab:model1_summary}.
+
+\newpage
+\begin{table}[h!]
+\centering
+\caption{OLS Regression Summary}
+\label{tab:model1_summary}
+\begin{tabular}{lccccc}
+\toprule
+ & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
+\midrule
+Constant & 30690 & 1244.395 & 24.662 & 0.000 & [28240, 33140] \\
+MEDHINC\_CY & -0.1067 & 0.025 & -4.199 & 0.000 & [-0.157, -0.057] \\
+\midrule
+\multicolumn{6}{l}{R-squared: 0.101, Adjusted R-squared: 0.095} \\
+\multicolumn{6}{l}{F-statistic: 17.63, Prob (F-statistic): 4.48e-05} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\par The negative coefficient for MEDHINC\_CY (-0.1067, p $<$ 0.001) indicates a statistically significant inverse relationship between median household income and crime count. As median income increases by one unit, crime count decreases by approximately 0.1067 units, supporting Hypothesis 1 that crime rates are higher in poorer neighborhoods. The R-squared value of 0.101 suggests that 10.1\% of the variance in crime count is explained by median household income alone, indicating a modest but significant relationship. The scatterplot of Crime Count vs Median Household Income visually confirms this downward trend, showing higher crime counts at lower income levels.
+
+
+\begin{figure}[h!]
+  \begin{center}
+    \advance\leftskip-3cm
+    \advance\rightskip-3cm
+    \includegraphics[keepaspectratio=true,scale=.6]{cime-count-income}
+    \caption{Crime Count vs Median Household Income}
+    \label{fig:cime-count-income}
+  \end{center}
+\end{figure}
+
+\newpage
+\subsection{Model 2: Crime Count vs Median Household Income and Streetlight Count}
+The second OLS regression model, seen in Figure \ref{fig:3d-cover}, includes both Median Household Income (MEDHINC\_CY) and Streetlight Count as predictors of Crime Count. The model summary is shown in Table~\ref{tab:model2_summary}.
+
+
+\begin{table}[h!]
+\centering
+\caption{OLS Regression Summary: Crime Count vs Median Household Income and Streetlight Count}
+\label{tab:model2_summary}
+\begin{tabular}{lccccc}
+\toprule
+ & Coefficient & Std. Error & t-value & P-value & 95\% Conf. Interval \\
+\midrule
+Constant & 22560 & 1252.670 & 18.010 & 0.000 & [20100, 25020] \\
+Streetlight\_Count & 0.3069 & 0.030 & 10.205 & 0.000 & [0.247, 0.366] \\
+MEDHINC\_CY & -0.1281 & 0.020 & -6.454 & 0.000 & [-0.167, -0.089] \\
+\midrule
+\multicolumn{6}{l}{R-squared: 0.461, Adjusted R-squared: 0.454} \\
+\multicolumn{6}{l}{F-statistic: 66.67, Prob (F-statistic): 1.18e-21} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\par This model shows improved explanatory power with an $R^2$ of 0.461, indicating that 46.1\% of the variance in crime count is explained by the combination of median household income and streetlight count. Both predictors are statistically significant (p $<$ 0.001). The coefficient for Streetlight\_Count (0.3069) suggests a positive relationship with crime count, meaning that an increase in streetlights is associated with an increase in crime, which is contrary to Hypothesis 2 that streetlight presence reduces crime rates. The coefficient for MEDHINC\_CY (-0.1281) remains negative and significant, reinforcing the finding from Model 1 that higher income is associated with lower crime counts. The 3D regression surface plot illustrates this relationship, showing a downward slope with respect to median household income and an upward slope with respect to streetlight count.
+
+\subsection{Discussion}
+\par The regression analysis provides insights into the relationships between crime count, median household income, and streetlight presence. Model 1 confirms Hypothesis 1, showing that crime counts are higher in poorer neighborhoods, as evidenced by the significant negative coefficient for MEDHINC\_CY. Model 2, however, challenges Hypothesis 2: while the Random Forest feature importance analysis (from the previous section) highlighted Streetlight\_Count as the most influential predictor, the positive coefficient in the OLS model suggests that areas with more streetlights experience higher crime counts. This could indicate that streetlights are more commonly installed in high-crime areas as a response to crime, rather than as a deterrent. The combined explanatory power of income and streetlight count in Model 2 ($R^2$ = 0.461) underscores the importance of considering both socioeconomic and infrastructural factors when analyzing crime patterns.
 
 \begin{thebibliography}{9}
 \bibitem{welsh08}
