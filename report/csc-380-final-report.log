@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 22:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 23:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -445,7 +445,7 @@ e learn-ing mod-
 
 [7]
 Chapter 2.
-<./graphs/crime-types-by-ward.png, id=199, 854.9541pt x 426.393pt>
+<./graphs/crime-types-by-ward.png, id=194, 854.9541pt x 426.393pt>
 File: ./graphs/crime-types-by-ward.png Graphic file (type png)
 <use ./graphs/crime-types-by-ward.png>
 Package pdftex.def Info: ./graphs/crime-types-by-ward.png  used on input line 1
@@ -458,13 +458,13 @@ Package pdftex.def Info: ./graphs/crime-types-by-ward.png  used on input line 1
 ]
 
 [9 <./graphs/crime-types-by-ward.png>]
-<./graphs/crime-types-by-time.png, id=213, 854.9541pt x 426.393pt>
+<./graphs/crime-types-by-time.png, id=208, 854.9541pt x 426.393pt>
 File: ./graphs/crime-types-by-time.png Graphic file (type png)
 <use ./graphs/crime-types-by-time.png>
 Package pdftex.def Info: ./graphs/crime-types-by-time.png  used on input line 1
 75.
 (pdftex.def)             Requested size: 512.97643pt x 255.83777pt.
-<./graphs/crime-by-hour.png, id=215, 732.8178pt x 395.3169pt>
+<./graphs/crime-by-hour.png, id=210, 732.8178pt x 395.3169pt>
 File: ./graphs/crime-by-hour.png Graphic file (type png)
 <use ./graphs/crime-by-hour.png>
 Package pdftex.def Info: ./graphs/crime-by-hour.png  used on input line 188.
@@ -477,7 +477,7 @@ Overfull \hbox (5.79776pt too wide) in paragraph at lines 198--199
 light count (Street-
  []
 
-<./graphs/heatmap.png, id=223, 640.3122pt x 571.6557pt>
+<./graphs/heatmap.png, id=218, 640.3122pt x 571.6557pt>
 File: ./graphs/heatmap.png Graphic file (type png)
 <use ./graphs/heatmap.png>
 Package pdftex.def Info: ./graphs/heatmap.png  used on input line 206.
@@ -502,7 +502,7 @@ nto crime dis-tri-bu-tion across
 
 [13]
 Chapter 3.
-<./graphs/3d-cover.png, id=242, 564.4287pt x 570.933pt>
+<./graphs/3d-cover.png, id=237, 564.4287pt x 570.933pt>
 File: ./graphs/3d-cover.png Graphic file (type png)
 <use ./graphs/3d-cover.png>
 Package pdftex.def Info: ./graphs/3d-cover.png  used on input line 233.
@@ -514,7 +514,7 @@ Package pdftex.def Info: ./graphs/3d-cover.png  used on input line 233.
  <./graphs/3d-cover.png>]
 
 [15]
-<./graphs/ridge-reg.png, id=257, 1076.823pt x 740.7675pt>
+<./graphs/ridge-reg.png, id=252, 1076.823pt x 740.7675pt>
 File: ./graphs/ridge-reg.png Graphic file (type png)
 <use ./graphs/ridge-reg.png>
 Package pdftex.def Info: ./graphs/ridge-reg.png  used on input line 270.
@@ -535,7 +535,7 @@ Overfull \hbox (32.3785pt too wide) in paragraph at lines 341--352
  [][] 
  []
 
-<./graphs/cime-count-income.png, id=280, 714.7503pt x 426.393pt>
+<./graphs/cime-count-income.png, id=275, 714.7503pt x 426.393pt>
 File: ./graphs/cime-count-income.png Graphic file (type png)
 <use ./graphs/cime-count-income.png>
 Package pdftex.def Info: ./graphs/cime-count-income.png  used on input line 361
@@ -551,25 +551,31 @@ Overfull \hbox (41.01743pt too wide) in paragraph at lines 376--388
 
 
 [20]
-Underfull \hbox (badness 7133) in paragraph at lines 397--398
+Chapter 4.
+
+
+[21
+
+]
+Underfull \hbox (badness 7133) in paragraph at lines 400--401
 []\OT1/cmr/m/n/10 Welsh, B.C. and Far-ring-ton, D.P. (2008), Ef-fects of Im-pro
 ved
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 397--398
+Underfull \hbox (badness 2065) in paragraph at lines 400--401
 \OT1/cmr/m/n/10 Street Light-ing on Crime. Camp-bell Sys-tem-atic Re-views, 4: 
 1-51.
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 399--400
+Underfull \hbox (badness 1466) in paragraph at lines 402--403
 []\OT1/cmr/m/n/10 HIPP, J.R. (2007), IN-COME IN-EQUAL-ITY, RACE, AND PLACE:
  []
 
 
 
-[21
+[22
 
 ] (./csc-380-final-report.aux)
  ***********
@@ -583,33 +589,29 @@ Package rerunfilecheck Warning: File `csc-380-final-report.out' has changed.
 (rerunfilecheck)                or use package `bookmark'.
 
 Package rerunfilecheck Info: Checksums for `csc-380-final-report.out':
-(rerunfilecheck)             Before: E619ADBDE310439C8065E5B1CEC02979;4986
-(rerunfilecheck)             After:  06BADB4402C50EDDD3591CECA8D03438;4939.
+(rerunfilecheck)             Before: 06BADB4402C50EDDD3591CECA8D03438;4939
+(rerunfilecheck)             After:  5693005D66CCCF1EB6324DAA7A50D8D4;5033.
  ) 
 Here is how much of TeX's memory you used:
  11052 strings out of 469608
- 177641 string characters out of 5470607
- 568986 words of memory out of 5000000
- 37695 multiletter control sequences out of 15000+600000
+ 177633 string characters out of 5470607
+ 568991 words of memory out of 5000000
+ 37694 multiletter control sequences out of 15000+600000
  634062 words of font info for 65 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  75i,9n,79p,1238b,520s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{section.3.4} has been referenced but does not exist
-, replaced by a fixed one
-
-</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><
-/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></
-usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></u
-sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr
-/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/l
-ocal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/loca
-l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local
-/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on csc-380-final-report.pdf (22 pages, 689208 bytes).
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><
+/usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></u
+sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
+/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
+cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
+al/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
+Output written on csc-380-final-report.pdf (23 pages, 689380 bytes).
 PDF statistics:
  352 PDF objects out of 1000 (max. 8388607)
- 295 compressed objects within 3 object streams
- 70 named destinations out of 1000 (max. 500000)
- 268 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 294 compressed objects within 3 object streams
+ 71 named destinations out of 1000 (max. 500000)
+ 260 words of extra memory for PDF output out of 10000 (max. 10000000)
 
