@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 21:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  7 MAY 2025 21:21
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -482,19 +482,19 @@ Package pdftex.def Info: ./graphs/3d-cover.png  used on input line 216.
  <./graphs/3d-cover.png>]
 
 [14]
-Underfull \hbox (badness 7133) in paragraph at lines 256--257
+Underfull \hbox (badness 7133) in paragraph at lines 255--256
 []\OT1/cmr/m/n/10 Welsh, B.C. and Far-ring-ton, D.P. (2008), Ef-fects of Im-pro
 ved
  []
 
 
-Underfull \hbox (badness 2065) in paragraph at lines 256--257
+Underfull \hbox (badness 2065) in paragraph at lines 255--256
 \OT1/cmr/m/n/10 Street Light-ing on Crime. Camp-bell Sys-tem-atic Re-views, 4: 
 1-51.
  []
 
 
-Underfull \hbox (badness 1466) in paragraph at lines 258--259
+Underfull \hbox (badness 1466) in paragraph at lines 257--258
 []\OT1/cmr/m/n/10 HIPP, J.R. (2007), IN-COME IN-EQUAL-ITY, RACE, AND PLACE:
  []
 
@@ -529,7 +529,7 @@ Here is how much of TeX's memory you used:
 sr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr
 /local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/lo
 cal/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on csc-380-final-report.pdf (16 pages, 556853 bytes).
+Output written on csc-380-final-report.pdf (16 pages, 556859 bytes).
 PDF statistics:
  238 PDF objects out of 1000 (max. 8388607)
  194 compressed objects within 2 object streams
