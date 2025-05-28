@@ -40,11 +40,11 @@ This project was developed in Google Colab using Python 3. The following librari
    pip install pandas numpy matplotlib seaborn geopandas shapely geopy scikit-learn imblearn statsmodels
    ```
 4. Mount your Google Drive in Colab and place the datasets in `/content/drive/MyDrive/datasets/`.
-5. Run the `csc_380_final_project.py` script.
+5. Run the `final_report_notebook_code.py` script.
 
 ## Usage
 1. Ensure the datasets are in the correct directory (`/content/drive/MyDrive/datasets/`).
-2. Open `csc_380_final_project.py` in Google Colab or a Jupyter Notebook.
+2. Open `final_report_notebook_code.py` in Google Colab or a Jupyter Notebook.
 3. Run the script cell by cell to:
    - Load and preprocess the data
    - Perform exploratory data analysis (correlation matrices, scatter plots, etc.)
