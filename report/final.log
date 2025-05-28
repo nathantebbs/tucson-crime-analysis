@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  8 MAY 2025 02:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.5.4)  27 MAY 2025 21:07
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**csc-380-final-report
-(./csc-380-final-report.tex
+**final.tex
+(./final.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
 (/usr/local/texlive/2025/texmf-dist/tex/latex/base/report.cls
@@ -625,8 +625,8 @@ Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
 Package csquotes Info: Redefining alias 'default' -> 'english'.
- (./csc-380-final-report.aux)
-\openout1 = `csc-380-final-report.aux'.
+ (./final.aux)
+\openout1 = `final.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
 LaTeX Font Info:    ... okay on input line 25.
@@ -716,16 +716,15 @@ File: english.lbx 2024/03/21 v3.20 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-\openout3 = `csc-380-final-report.bcf'.
+\openout3 = `final.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
-Package biblatex Info: ... file 'csc-380-final-report.bbl' found.
+Package biblatex Info: ... file 'final.bbl' found.
 
-(./csc-380-final-report.bbl)
+(./final.bbl)
 Package biblatex Info: Reference section=0 on input line 25.
 Package biblatex Info: Reference segment=0 on input line 25.
-
-(/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
+ (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2024/06/23 v1.3e Standard LaTeX Color (DPC)
 
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -736,18 +735,18 @@ Package color Info: Driver file: pdftex.def on input line 149.
 (/usr/local/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx))
 Package hyperref Info: Link coloring ON on input line 25.
 
-(./csc-380-final-report.out) (./csc-380-final-report.out)
+(./final.out) (./final.out)
 \@outlinefile=\write4
-\openout4 = `csc-380-final-report.out'.
+\openout4 = `final.out'.
 
 
 
 [1
 
 {/usr/local/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(./csc-380-final-report.toc)
+(./final.toc)
 \tf@toc=\write5
-\openout5 = `csc-380-final-report.toc'.
+\openout5 = `final.toc'.
 
 
 
@@ -774,7 +773,11 @@ Chapter 1.
 
 [5]
 Chapter 2.
-<./graphs/crime-types-by-ward.png, id=194, 854.9541pt x 426.393pt>
+
+LaTeX Warning: Reference `fig:crime-type-by-ward' on page 6 undefined on input 
+line 135.
+
+<./graphs/crime-types-by-ward.png, id=53, 854.9541pt x 426.393pt>
 File: ./graphs/crime-types-by-ward.png Graphic file (type png)
 <use ./graphs/crime-types-by-ward.png>
 Package pdftex.def Info: ./graphs/crime-types-by-ward.png  used on input line 1
@@ -785,7 +788,11 @@ Package pdftex.def Info: ./graphs/crime-types-by-ward.png  used on input line 1
 [6
 
  <./graphs/crime-types-by-ward.png>]
-<./graphs/crime-types-by-time.png, id=204, 854.9541pt x 426.393pt>
+
+LaTeX Warning: Reference `fig:crime-type-by-time' on page 7 undefined on input 
+line 150.
+
+<./graphs/crime-types-by-time.png, id=64, 854.9541pt x 426.393pt>
 File: ./graphs/crime-types-by-time.png Graphic file (type png)
 <use ./graphs/crime-types-by-time.png>
 Package pdftex.def Info: ./graphs/crime-types-by-time.png  used on input line 1
@@ -794,7 +801,11 @@ Package pdftex.def Info: ./graphs/crime-types-by-time.png  used on input line 1
 
 
 [7 <./graphs/crime-types-by-time.png>]
-<./graphs/crime-by-hour.png, id=212, 732.8178pt x 395.3169pt>
+
+LaTeX Warning: Reference `fig:crime-by-hour' on page 8 undefined on input line 
+164.
+
+<./graphs/crime-by-hour.png, id=72, 732.8178pt x 395.3169pt>
 File: ./graphs/crime-by-hour.png Graphic file (type png)
 <use ./graphs/crime-by-hour.png>
 Package pdftex.def Info: ./graphs/crime-by-hour.png  used on input line 168.
@@ -802,7 +813,10 @@ Package pdftex.def Info: ./graphs/crime-by-hour.png  used on input line 168.
 
 
 [8 <./graphs/crime-by-hour.png>]
-<./graphs/heatmap.png, id=220, 640.3122pt x 571.6557pt>
+
+LaTeX Warning: Reference `fig:heatmap' on page 9 undefined on input line 175.
+
+<./graphs/heatmap.png, id=79, 640.3122pt x 571.6557pt>
 File: ./graphs/heatmap.png Graphic file (type png)
 <use ./graphs/heatmap.png>
 Package pdftex.def Info: ./graphs/heatmap.png  used on input line 179.
@@ -813,7 +827,7 @@ Package pdftex.def Info: ./graphs/heatmap.png  used on input line 179.
 
 [10]
 Chapter 3.
-<./graphs/3d-cover.png, id=233, 564.4287pt x 570.933pt>
+<./graphs/3d-cover.png, id=95, 564.4287pt x 570.933pt>
 File: ./graphs/3d-cover.png Graphic file (type png)
 <use ./graphs/3d-cover.png>
 Package pdftex.def Info: ./graphs/3d-cover.png  used on input line 202.
@@ -823,7 +837,15 @@ Package pdftex.def Info: ./graphs/3d-cover.png  used on input line 202.
 [11
 
  <./graphs/3d-cover.png>]
-<./graphs/ridge-reg.png, id=242, 1076.823pt x 740.7675pt>
+
+LaTeX Warning: Reference `fig:ridge-reg' on page 12 undefined on input line 209
+.
+
+
+LaTeX Warning: Reference `fig:ridge-reg' on page 12 undefined on input line 230
+.
+
+<./graphs/ridge-reg.png, id=103, 1076.823pt x 740.7675pt>
 File: ./graphs/ridge-reg.png Graphic file (type png)
 <use ./graphs/ridge-reg.png>
 Package pdftex.def Info: ./graphs/ridge-reg.png  used on input line 234.
@@ -833,7 +855,15 @@ Package pdftex.def Info: ./graphs/ridge-reg.png  used on input line 234.
 [12]
 
 [13 <./graphs/ridge-reg.png>]
-<./graphs/random-forest.png, id=257, 570.933pt x 395.3169pt>
+
+LaTeX Warning: Reference `tab:rf_classification_report' on page 14 undefined on
+ input line 246.
+
+
+LaTeX Warning: Reference `fig:random-forest' on page 14 undefined on input line
+ 266.
+
+<./graphs/random-forest.png, id=117, 570.933pt x 395.3169pt>
 File: ./graphs/random-forest.png Graphic file (type png)
 <use ./graphs/random-forest.png>
 Package pdftex.def Info: ./graphs/random-forest.png  used on input line 270.
@@ -842,8 +872,21 @@ Package pdftex.def Info: ./graphs/random-forest.png  used on input line 270.
 
 [14 <./graphs/random-forest.png>]
 
+LaTeX Warning: Reference `tab:lr_classification_report' on page 15 undefined on
+ input line 277.
+
+
+LaTeX Warning: Reference `fig:crime-count-income' on page 15 undefined on input
+ line 306.
+
+
+LaTeX Warning: Reference `tab:model1_summary' on page 15 undefined on input lin
+e 306.
+
+
+
 [15]
-<./graphs/crime-count-income.png, id=275, 714.7503pt x 426.393pt>
+<./graphs/crime-count-income.png, id=137, 714.7503pt x 426.393pt>
 File: ./graphs/crime-count-income.png Graphic file (type png)
 <use ./graphs/crime-count-income.png>
 Package pdftex.def Info: ./graphs/crime-count-income.png  used on input line 32
@@ -852,6 +895,15 @@ Package pdftex.def Info: ./graphs/crime-count-income.png  used on input line 32
 
 
 [16 <./graphs/crime-count-income.png>]
+
+LaTeX Warning: Reference `fig:3d-cover' on page 17 undefined on input line 336.
+
+
+
+LaTeX Warning: Reference `tab:model2_summary' on page 17 undefined on input lin
+e 336.
+
+
 
 [17]
 Chapter 4.
@@ -876,25 +928,43 @@ taset\OT1/cmr/m/n/10 . [][]$\OT1/cmtt/m/n/10 https : / / drive . google . com /
 
 [20
 
-] (./csc-380-final-report.aux)
+] (./final.aux)
  ***********
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-04-14>
  ***********
-Package rerunfilecheck Info: File `csc-380-final-report.out' has not changed.
-(rerunfilecheck)             Checksum: A8EEA5043CAAAD7397127056DF626F5D;5289.
-Package logreq Info: Writing requests to 'csc-380-final-report.run.xml'.
-\openout1 = `csc-380-final-report.run.xml'.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
+
+Package rerunfilecheck Warning: File `final.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `final.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  A8EEA5043CAAAD7397127056DF626F5D;5289.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                final
+(biblatex)                and rerun LaTeX afterwards.
+
+Package logreq Info: Writing requests to 'final.run.xml'.
+\openout1 = `final.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 20403 strings out of 469608
- 361549 string characters out of 5470607
- 1197459 words of memory out of 5000000
- 46961 multiletter control sequences out of 15000+600000
+ 20371 strings out of 469608
+ 360625 string characters out of 5470607
+ 1195298 words of memory out of 5000000
+ 46929 multiletter control sequences out of 15000+600000
  634877 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 67i,9n,77p,1235b,1827s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 67i,9n,77p,1230b,1790s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 ></usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
 </usr/local/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb>
@@ -906,10 +976,10 @@ cal/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/loc
 al/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/loca
 l/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local
 /texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb>
-Output written on csc-380-final-report.pdf (21 pages, 753107 bytes).
+Output written on final.pdf (21 pages, 745961 bytes).
 PDF statistics:
- 390 PDF objects out of 1000 (max. 8388607)
- 325 compressed objects within 4 object streams
+ 254 PDF objects out of 1000 (max. 8388607)
+ 191 compressed objects within 2 object streams
  74 named destinations out of 1000 (max. 500000)
- 281 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -8,7 +8,7 @@ This project analyzes the relationship between crime rates, neighborhood income 
 The analysis employs data preprocessing, exploratory data analysis (EDA), and statistical modeling to uncover patterns and relationships. Models include Ridge Regression for hourly crime patterns, Random Forest and Logistic Regression for predicting high-crime wards, and Ordinary Least Squares (OLS) regression to assess the impact of income and streetlights on crime counts.
 
 ## Repository Structure
-- **`csc_380_final_project.py`**: Main Python script containing data loading, preprocessing, EDA, and modeling code.
+- **`final_report_notebook_code.py`**: Main Python script containing data loading, preprocessing, EDA, and modeling code.
 - **`datasets/`**: Directory for storing the datasets (not included in the repository; see [Data Sources](#data-sources) for download links).
 - **`README.md`**: This file, providing an overview of the project and instructions for use.
 
@@ -69,16 +69,6 @@ This project was developed in Google Colab using Python 3. The following librari
 - **Model Performance**:
   - Random Forest and Logistic Regression models effectively predict high-crime wards, with feature importance highlighting streetlight count as a key predictor.
   - Ridge Regression reveals distinct hourly crime patterns across Tucson police divisions.
-
-## Contributing
-Contributions are welcome! To contribute:
-1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-branch`).
-3. Make your changes and commit (`git commit -m "Add feature"`).
-4. Push to the branch (`git push origin feature-branch`).
-5. Open a pull request.
-
-Please ensure your code follows the existing style and includes appropriate comments.
 
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
