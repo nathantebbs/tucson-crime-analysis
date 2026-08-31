@@ -1,43 +1,41 @@
-# Tucson Crime Analysis: Income and Street Lighting
+# Tucson crime analysis
 
-A multivariate analysis of Tucson Police crime and arrest data against
-neighborhood income and city streetlight locations, testing two hypotheses:
+I made this analysis as my final project for CSc 380 at the University of
+Arizona in spring 2025. It compares Tucson Police crime and arrest records with
+neighborhood income and city streetlight locations.
 
-1. **Crime and income.** Do thefts and violent crimes occur more often in richer
-   or poorer neighborhoods?
-2. **Crime and streetlights.** Does the presence of city streetlights influence
-   crime rates, particularly at night?
+I asked two questions:
 
-Final project for CSc 380 at the University of Arizona, spring 2025.
+1. How do reported theft and violent crime counts vary with neighborhood income?
+2. How do reported crime counts vary with the number of mapped streetlights?
 
-The full 21-page write-up with figures, methodology, and citations is
-[`report/final.pdf`](report/final.pdf). Start there.
+The full 21-page report contains the figures, methods, citations, and model
+output. Start with [`report/final.pdf`](report/final.pdf).
 
-## What's here
+## Contents
 
-- `final_report_notebook_code.py`: the analysis, exported from the Colab
-  notebook it was developed in. Loading, cleaning, EDA, and modeling.
-- `datasets/`: all four source CSVs, checked in so the analysis is reproducible.
-- `report/`: the LaTeX source, figures, and compiled PDF.
+- `final_report_notebook_code.py` contains the analysis exported from Colab.
+- `datasets/` contains the four source CSV files.
+- `report/` contains the LaTeX source, figures, and compiled report.
 
 ## Data
 
-All four datasets are public, from the City of Tucson open data portal.
+All four datasets came from the City of Tucson open data portal.
 
 | Dataset | Source |
-|---|---|
+| --- | --- |
 | Tucson Police reported crimes | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/) |
-| Tucson Police arrests, 2021 | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/datasets/7c7c881c1fff44ec8a8c2ab612700271_67/explore) |
-| City of Tucson streetlight locations | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/datasets/09ed59b6aae2483aa1bd32837d4aa7e5_19/explore) |
+| Tucson Police arrests from 2021 | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/datasets/7c7c881c1fff44ec8a8c2ab612700271_67/explore) |
+| City streetlight locations | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/datasets/09ed59b6aae2483aa1bd32837d4aa7e5_19/explore) |
 | Neighborhood income | [gisdata.tucsonaz.gov](https://gisdata.tucsonaz.gov/datasets/59f033d07eae41b0bdc21db87375d721_0/explore) |
 
 ## Running it
 
 The script was written in Colab and reads from
-`/content/drive/MyDrive/datasets/`. To run it locally, point those paths at this
-repo's `datasets/` directory.
+`/content/drive/MyDrive/datasets/`. Point those paths at this repo's `datasets/`
+directory before running it locally.
 
-```bash
+```sh
 pip install pandas numpy matplotlib seaborn geopandas shapely geopy \
             scikit-learn imbalanced-learn statsmodels
 python final_report_notebook_code.py
@@ -45,42 +43,39 @@ python final_report_notebook_code.py
 
 ## Methods
 
-- Ridge regression on hourly crime counts by police division.
-- Random Forest and logistic regression to classify high-crime wards from income
-  and streetlight features.
-- OLS to estimate how income and streetlight count relate to crime counts.
+- Ridge regression on hourly reported crime counts by police division
+- Random Forest and logistic regression on ward income and streetlight features
+- OLS estimates for income, streetlight count, and reported crime count
 
-## Findings
+## Results
 
-**Hypothesis 1 held.** Median household income is inversely associated with
-crime counts. The correlation between median household income and crime count is
--0.32, and the relationship is significant in OLS (Model 1, R2 = 0.101). Wards 3
-and 5, the lowest-income wards, carry the highest rates of both larceny and
-violent crime.
+In this dataset, median household income and reported crime count have a
+correlation of -0.32. Wards 3 and 5 have the lowest median incomes and the
+highest reported larceny and violent crime counts. OLS Model 1 reports
+R2 = 0.101.
 
-**Hypothesis 2 did not hold.** Streetlight count is *positively* associated with
-crime, not negatively. OLS Model 2 (R2 = 0.461) and Random Forest feature
-importance (0.55 for streetlight count) both point the same direction, and the
-correlation between streetlight count and the nighttime share of crime is only
-0.20. The most likely reading is that lighting gets installed in response to
-crime rather than preventing it. This runs against Welsh and Farrington's
-finding that improved lighting reduces some crime types.
+Streetlight count has a positive association with reported crime count in OLS
+Model 2. That model reports R2 = 0.461. Random Forest assigns streetlight count
+a feature importance of 0.55. The correlation between streetlight count and the
+nighttime share of reported crime is 0.20.
 
-Crime and arrest counts correlate at 0.97, which says policing tracks reported
-crime closely but also raises a question about over-policing in lower-income
-wards that this data cannot settle.
+Those results do not show that streetlights cause crime or prevent it. The data
+does not record when lights were installed, whether they worked, or why the city
+placed them where it did.
 
-Random Forest classified high-crime wards more accurately than logistic
-regression (0.97 versus 0.75), though with only six wards that number describes
-this dataset rather than generalizing.
+Reported crime and arrest counts have a correlation of 0.97 in this dataset.
+That number does not establish why the counts move together. It cannot separate
+crime incidence, reporting, enforcement, or policing intensity.
 
-### Limits
+Random Forest classified the six wards in this dataset with 0.97 accuracy. The
+logistic regression result was 0.75. Six wards are not enough to treat either
+number as evidence of performance on other cities or time periods.
 
-This is observational data, so every relationship above is an association and
-none of it establishes cause. Crime counts measure *reported* crime, which
-carries reporting and enforcement bias. The streetlight data is a location
-inventory with no maintenance or outage history, so a mapped light is not
-necessarily a lit one.
+## Limits
+
+This is an observational analysis. Every result above is an association. Crime
+counts cover reported crime and carry reporting and enforcement bias. The
+streetlight data is a location inventory with no maintenance or outage history.
 
 ## License
 
